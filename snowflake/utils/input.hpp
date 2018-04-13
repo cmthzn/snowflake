@@ -17,7 +17,7 @@ private:
 
 public:
 	void poll( ) {
-		static HWND csgo_hwnd = FindWindowW( L"Valve001", nullptr );
+		static HWND csgo_hwnd = FindWindowA( "Valve001", nullptr );
 		
 		memcpy( this->previous_states, this->key_states, 256 );
 
