@@ -17,6 +17,8 @@ private:
 
 public:
 	void poll( ) {
+		static HWND csgo_hwnd = FindWindowA( "Valve001", nullptr );
+		
 		memcpy( this->previous_states, this->key_states, 256 );
 
 		for ( int i = 0; i < 256; i++ ) {
@@ -29,6 +31,7 @@ public:
 		}
 
 		GetCursorPos( &this->mouse );
+		ScreenToClient( csgo_hwnd, &this->mouse );
 	}
 	key_state get_key_state( int key ) {
 		if ( key_states [ key ] ) {
