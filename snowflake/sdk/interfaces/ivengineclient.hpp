@@ -2,6 +2,7 @@
 
 struct player_info_t {
 	long __pad0;
+	long __pad1;
 	union {
 		long xuid;
 		struct {

@@ -206,8 +206,8 @@ public:
 	netvar_fn( int, life_state, "DT_BasePlayer->m_lifeState" );
 	netvar_fn( int, flags, "DT_BasePlayer->m_fFlags" );
 	netvar_fn( int, tick_base, "DT_BasePlayer->m_nTickBase" );
-	netvar_fn( vector_3d, punch_angle, "DT_BasePlayer->m_viewPunchAngle" );
-	netvar_fn( vector_3d, aim_punch_angle, "DT_BasePlayer->m_aimPunchAngle" );
+	netvar_offset_fn( vector_3d, punch_angle, "DT_BasePlayer->m_viewPunchAngle", netvar_manager::get( ).get_offset( fnv_hash( "DT_LocalPlayerExclusive->m_Local" ) ) );
+	netvar_offset_fn( vector_3d, aim_punch_angle, "DT_BasePlayer->m_aimPunchAngle", netvar_manager::get( ).get_offset( fnv_hash( "DT_LocalPlayerExclusive->m_Local" ) ) );
 	netvar_fn( vector_3d, velocity, "DT_BasePlayer->m_vecVelocity[0]" );
 	netvar_fn( unsigned long, observer_target, "DT_BasePlayer->m_hObserverTarget" );
 	netvar_fn( unsigned long, active_weapon_handle, "DT_BaseCombatCharacter->m_hActiveWeapon" );
